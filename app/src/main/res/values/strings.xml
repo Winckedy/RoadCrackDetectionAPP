@@ -1,0 +1,186 @@
+<resources>
+    <string name="app_name">道路病害图像分类</string>
+    <string name="ready_to_capture">准备拍照分类道路病害</string>
+    <string name="capturing">正在拍照…</string>
+    <string name="processing">正在分析图像…</string>
+    <string name="camera_permission_denied">需要相机权限才能使用此功能</string>
+    <string name="error_loading_model">加载模型失败</string>
+    <string name="capture_failed">拍照失败</string>
+    <string name="description_capture_button">拍照并分类病害</string>
+    <string name="result_label">分类结果: %1$s</string>
+    <string name="confidence_label">置信度: %.2f%%</string>
+    <string name="error_label">错误: %1$s</string>
+    <string name="unknown_class">未知类别</string>
+    <string name="select_from_album">从相册选择</string>
+    <string name="take_photo">拍照</string>
+    <string name="initial_prompt">准备拍照或选择图片</string>
+    <string name="processing_time_ms">分类时长: %1$d ms</string>
+    <string name="back_button_description">返回</string>
+    <string name="history_button_description">查看历史记录</string>
+    <string name="record_video">录像</string>
+    <string name="record_video_description">开始或停止录制视频</string>
+    <string name="timer_initial_value">00:00</string>
+    <string name="detail_image_description">识别结果的图片</string>
+
+    <!-- Class Names for Damage Types -->
+    <string name="class_name_transverse_crack">横向裂缝</string>
+    <string name="class_name_longitudinal_crack">竖向裂缝</string>
+    <string name="class_name_alligator_crack">网状裂缝</string>
+    <string name="class_name_pothole">坑洞路面</string>
+    <string name="class_name_normal">正常路面</string>
+
+    <!-- UI & Toast Messages -->
+    <string name="location_permission_denied_save_without_location">未授予位置权限，记录已保存（无位置信息）</string>
+    <string name="error_loading_image">无法加载图片</string>
+    <string name="permissions_required">必须授予相机、录音和定位权限才能使用此功能</string>
+    <string name="location_permission_needed_for_recording">录制前需要定位权限</string>
+    <string name="recording_stopped">录制已停止</string>
+    <string name="recording_started">录制已开始</string>
+    <string name="video_saved_starting_analysis">视频保存成功，开始后台分析</string>
+    <string name="analyzing_video_in_background">正在后台分析视频</string>
+    <string name="video_analysis_complete">视频分析完成</string>
+    <string name="video_analysis_summary">视频分析完成，共发现 %1$d 个问题点</string>
+    <string name="error_processing_video">处理视频失败</string>
+    <string name="error_processing_video_with_message">处理视频失败: %1$s</string>
+    <string name="image_path_processing_failed">图片路径处理失败</string>
+    <string name="gps_disabled_save_without_location">GPS未开启，记录已保存（无位置信息）</string>
+    <string name="location_timeout_save_without_location">定位超时，记录已保存（无位置信息）</string>
+    <string name="error_camera_init_failed">相机初始化失败</string>
+    <string name="error_camera_start_failed">相机启动失败: %1$s</string>
+    <string name="record_saved">记录已保存</string>
+    <string name="error_model_load_failed">模型加载失败</string>
+    <string name="error_camera_not_initialized">相机未初始化</string>
+    <string name="error_model_not_loaded">模型未加载</string>
+    <string name="error_processing_failed">处理失败</string>
+    <string name="error_processing_failed_with_message">处理失败: %1$s</string>
+    <string name="video_summary">视频摘要</string>
+    <!-- Location Formatting -->
+    <string name="location_format">经度: %1$s, 纬度: %2$s</string>
+
+    <!-- Logging Messages (Optional, but good practice) -->
+    <string name="log_new_location_received">获取到新位置: %1$s</string>
+    <string name="log_recording_started">录制开始</string>
+    <string name="log_recording_success">录制成功，视频保存在: %1$s</string>
+    <string name="log_recording_failed">录制失败: %1$s</string>
+    <string name="log_video_frame_record_saved">视频帧记录已保存: %1$s</string>
+    <string name="log_video_summary_record_saved">视频摘要记录已保存: %1$s</string>
+    <string name="log_requesting_location_failed">请求位置失败</string>
+    <string name="log_record_already_exists">记录已存在，且包含位置信息，无需重复保存。</string>
+    <string name="log_record_saved_or_updated">记录已保存/更新: %1$s</string>
+    <string name="log_saving_record_failed">保存记录失败</string>
+    <string name="log_save_bitmap_failed">保存Bitmap到MediaStore失败: %1$s</string>
+    <string name="log_model_loaded_successfully">PyTorch 模型加载成功</string>
+    <string name="log_error_analyzing_image">分析图片时出错</string>
+
+    <string name="history_title">历史记录</string>
+    <string name="export_dialog_title">选择导出格式</string>
+    <string name="export_option_txt">导出为 TXT</string>
+    <string name="export_option_excel">导出为 Excel (.xlsx)</string>
+    <string name="export_no_records">没有可导出的记录</string>
+    <string name="export_success">文件已保存到 \'下载\' 文件夹</string>
+    <string name="export_failed">导出失败</string>
+    <string name="export_error">导出时发生错误: %1$s</string>
+
+    <string name="detail_title">识别详情</string>
+    <string name="detail_confidence_label">置信度: %.2f%%</string>
+    <string name="detail_processing_time_label">分类时长: %d ms</string>
+    <string name="detail_location_label">地理位置: %s</string>
+    <string name="detail_location_not_recorded">未记录</string>
+
+    <string name="export_header_timestamp">时间</string>
+    <string name="export_header_class_name">分类类型</string>
+    <string name="export_header_confidence">置信度(%)</string>
+    <string name="export_header_processing_time">处理时长(ms)</string>
+    <string name="export_header_location">地理位置</string>
+    <string name="export_data_not_available">N/A</string>
+    <string name="export_excel_sheet_name">History Records</string>
+
+    <string name="export_options_title">选择导出选项</string>
+    <string name="export_all_records">导出全部记录</string>
+    <string name="export_by_time_range">按时间范围导出</string>
+
+    <!-- Time Range Picker Dialog -->
+    <string name="time_range_picker_title">选择时间范围</string>
+    <string name="start_time_label">开始时间</string>
+    <string name="end_time_label">结束时间</string>
+    <string name="export_button">导出</string>
+    <string name="cancel_button">取消</string>
+    <string name="toast_end_time_before_start_time">结束时间不能早于开始时间</string>
+    <string name="toast_no_records_in_range">该时间范围内没有记录</string>
+
+    <string name="date_time_button_format">%1$s: %2$s</string>
+    <string name="location_status_title">位置状态</string>
+    <string name="location_status_description">显示当前GPS位置状态</string>
+
+    <string name="error_saving_record">保存记录到数据库失败</string>
+    <string name="error_model_not_loaded_for_analysis">模型未加载，无法进行分析</string>
+    <string name="error_video_has_no_duration">视频没有时长</string>
+    <string name="error_saving_image">无法将图像保存到媒体库</string>
+
+    <string name="log_record_already_exists_with_location">时间戳为 %d 的记录已存在且包含位置信息。跳过重新保存。</string>
+    <string name="log_record_updated_with_location">记录已更新位置信息：%s</string>
+    <string name="log_record_exists_without_location_not_updating">时间戳为 %d 的记录已存在且没有位置信息。不进行更新。</string>
+
+    <string name="history_item_confidence">置信度: %.2f%%</string>
+    <string name="history_item_processing_time">分类时长: %d ms</string>
+    <string name="history_item_location">位置: %s</string>
+    <string name="history_item_location_not_available">位置信息不可用</string>
+    <string name="time_picker_button_format">%1$s: %2$s</string>
+    <string name="empty_history_message">目前没有历史记录</string>
+
+    <string name="menu_clear_history">清理历史</string>
+    <string name="menu_export">导出</string>
+    <string name="detail_fps_label">推理速度: %.2f FPS</string>
+    <string name="export_header_fps">推理速度 (FPS)</string>
+    <string name="history_item_fps">推理速度: %.2f FPS</string>
+    <string name="processing_batch_progress">正在处理第 %1$d 个，共 %2$d 个</string>
+
+    <!-- 清理历史记录选项 -->
+    <string name="clear_history_dialog_title">清理历史记录</string>
+    <string name="clear_option_older_than_24h">清理24小时前的记录</string>
+    <string name="clear_option_all_records">清理所有记录</string>
+    <string name="clear_option_by_date_range">按日期范围清理…</string>
+
+    <!-- 清理确认对话框 -->
+    <string name="action_confirmation_title">操作确认</string>
+    <string name="confirm_delete_older_than_24h">确定要删除24小时之前的所有记录吗？</string>
+    <string name="confirm_delete_all_records">确定要删除全部历史记录吗？此操作不可撤销。</string>
+    <string name="confirm_delete_date_range">确定要删除从 %1$s 到 %2$s 的所有记录吗？</string> <!-- %1$s: start date, %2$s: end date -->
+    <string name="confirm_delete_button">确认删除</string>
+
+    <!-- 清理结果提示 -->
+    <string name="delete_date_range_picker_title">选择要删除的日期范围</string>
+    <string name="toast_records_deleted_in_range">已删除 %1$d 条指定范围内的记录。</string> <!-- %1$d: count of deleted records -->
+    <string name="toast_all_records_cleared">已清空 %1$d 条所有历史记录。</string> <!-- %1$d: count of deleted records -->
+    <string name="toast_old_records_deleted">已删除 %1$d 条旧记录。</string> <!-- %1$d: count of deleted records -->
+
+
+    <string name="analyzing_video_progress">正在分析视频 %1$d/%2$d</string> <!-- %1$d: current index, %2$d: total count -->
+    <string name="batch_analysis_complete_toast">批量分析完成。已处理 %1$d 个项目。</string> <!-- %1$d: processed count -->
+    <string name="batch_analysis_complete_message">批量分析完成</string>
+    <string name="batch_processing_failed_error">批量处理失败: %1$s</string> <!-- %1$s: error message -->
+
+    <string name="log_preheating_location_received">预热定位已接收: %1$s</string> <!-- %1$s: 格式化后的位置信息 -->
+    <string name="log_location_preheating_started">定位预热已开始。</string>
+    <string name="log_location_preheating_stopped">定位预热已停止。</string>
+
+    <string name="processing_batch_prefix">正在处理</string> <!-- 用于检查resultText是否显示批量处理进度 -->
+
+
+    <string name="toast_video_no_duration">视频无有效时长，无法处理。</string> <!-- 如果需要Toast提示可以启用 -->
+    <string name="log_video_processed">视频已处理: %1$s, 发现 %2$d 个异常帧</string> <!-- %1$s: video URI, %2$d: processed frames count -->
+    <string name="toast_video_processing_error">处理视频时发生错误: %1$s</string><!-- 如果需要Toast提示可以启用 -->
+
+    <string name="error_failed_to_save_bitmap">保存位图失败。</string>
+    <string name="error_failed_to_create_mediastore_record">创建新的MediaStore记录失败。</string>
+    <string name="error_failed_to_load_bitmap_from_uri">从URI加载位图失败。</string>
+
+    <string name="log_model_warmed_up_successfully">模型预热成功。</string>
+    <string name="log_model_load_failed">模型加载失败。</string> <!-- 建议添加此项以捕获catch块中的错误 -->
+    <string name="log_no_media_selected">未选择任何媒体文件。</string>
+
+    <string name="log_error_processing_batch_item">处理批次项目时出错: %1$s</string> <!-- %1$s: URI of the item -->
+    <string name="log_batch_processing_error">批量处理错误</string>
+    <string name="select_model_hint">选择模型</string>
+    <string name="switching_model">正在切换模型: %1$s</string>
+</resources>

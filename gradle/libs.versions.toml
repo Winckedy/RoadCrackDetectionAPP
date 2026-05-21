@@ -1,0 +1,107 @@
+# ==============================================================================
+# 版本定义 (Versions)
+# 按功能分组，组内按字母顺序排序，版本号保持不变
+# ==============================================================================
+[versions]
+# --- 核心构建工具 ---
+agp = "8.13.2"
+androidDesugarJdkLibs = "2.1.5"
+kotlin = "2.3.0"
+ksp = "2.2.21-2.0.4"
+
+# --- AndroidX 核心与 UI ---
+androidx-appcompat = "1.7.1"
+androidxActivity = "1.12.3"     # Note: Duplicated with activity, kept both as requested
+androidx-constraintlayout = "2.2.1"
+coreKtx = "1.17.0"
+material = "1.13.0"
+
+# --- AndroidX 架构组件 ---
+androidx-camera = "1.5.3"
+androidx-exifinterface = "1.4.2"
+androidx-lifecycle = "2.10.0"
+room = "2.8.4"
+
+# --- 第三方功能库 ---
+apachePoi = "5.5.1"
+glide = "5.0.5"
+permissionx = "1.8.1"
+pytorch = "2.1.0"
+# --- 测试库 ---
+androidx-espresso = "3.7.0"
+androidx-junit = "1.3.0"
+junit = "4.13.2"
+
+# ==============================================================================
+# 库依赖定义 (Libraries)
+# 按功能分组，组内按字母顺序排序
+# ==============================================================================
+[libraries]
+# --- 核心与 UI (AndroidX Core & UI) ---
+androidx-activity = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidxActivity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+# --- 架构组件 (AndroidX Architecture Components) ---
+# CameraX
+androidx-camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "androidx-camera" }
+androidx-camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "androidx-camera" }
+androidx-camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "androidx-camera" }
+androidx-camera-video = { group = "androidx.camera", name = "camera-video", version.ref = "androidx-camera" }
+androidx-camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "androidx-camera" }
+# Lifecycle
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+# Room
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+# Other
+androidx-exifinterface = { group = "androidx.exifinterface", name = "exifinterface", version.ref = "androidx-exifinterface" }
+
+# --- 第三方库 (Third-Party Libraries) ---
+# Apache POI for Excel
+apache-poi-ooxml = { group = "org.apache.poi", name = "poi-ooxml", version.ref = "apachePoi" }
+# Desugar for newer Java APIs
+android-desugar-jdk-libs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
+# Glide for Image Loading
+glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+# PermissionX for easy permission handling
+permissionx = { group = "com.guolindev.permissionx", name = "permissionx", version.ref = "permissionx" }
+# PyTorch Mobile
+pytorch-android-lite = { group = "org.pytorch", name = "pytorch_android_lite", version.ref = "pytorch" }
+pytorch-android-torchvision-lite = { group = "org.pytorch", name = "pytorch_android_torchvision_lite", version.ref = "pytorch" }
+
+# --- 测试库 (Testing) ---
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-junit" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+# ==============================================================================
+# 依赖包定义 (Bundles)
+# 用于一次性引入多个相关的依赖
+# ==============================================================================
+[bundles]
+# 核心UI库 (你的原始定义)
+androidx-base = ["androidx-core-ktx", "androidx-appcompat", "material", "androidx-constraintlayout"]
+# 完整的 CameraX 功能 (已为你补全)
+androidx-camera = ["androidx-camera-camera2", "androidx-camera-core", "androidx-camera-lifecycle", "androidx-camera-video", "androidx-camera-view"]
+# Lifecycle 常用库
+androidx-lifecycle = ["androidx-lifecycle-viewmodel-ktx", "androidx-lifecycle-livedata-ktx"]
+# PyTorch Mobile 库
+pytorch-mobile = ["pytorch-android-lite", "pytorch-android-torchvision-lite"]
+# Room 数据库库
+room = ["androidx-room-runtime", "androidx-room-ktx"]
+
+# ==============================================================================
+# 插件定义 (Plugins)
+# 按字母顺序排序
+# ==============================================================================
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+

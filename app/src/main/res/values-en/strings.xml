@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Road Damage Image Classification</string>
+    <string name="ready_to_capture">Ready to capture and classify road damage</string>
+    <string name="capturing">Capturing…</string>
+    <string name="processing">Analyzing image…</string>
+    <string name="camera_permission_denied">Camera permission is required to use this feature</string>
+    <string name="error_loading_model">Failed to load model</string>
+    <string name="capture_failed">Capture failed</string>
+    <string name="description_capture_button">Capture photo and classify damage</string>
+    <string name="result_label">Classification Result: %1$s</string>
+    <string name="confidence_label">Confidence: %.2f%%</string>
+    <string name="error_label">Error: %1$s</string>
+    <string name="unknown_class">Unknown Class</string>
+    <string name="select_from_album">Select from Album</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="initial_prompt">Ready to take a photo or select an image</string>
+    <string name="processing_time_ms">Processing Time: %1$d ms</string>
+    <string name="back_button_description">Back</string>
+    <string name="history_button_description">View History</string>
+    <string name="record_video">Record Video</string>
+    <string name="record_video_description">Start or stop video recording</string>
+    <string name="timer_initial_value">00:00</string>
+    <string name="detail_image_description">Image of identification result</string>
+
+    <!-- Class Names for Damage Types -->
+    <string name="class_name_transverse_crack">Transverse Crack</string>
+    <string name="class_name_longitudinal_crack">Longitudinal Crack</string>
+    <string name="class_name_alligator_crack">Alligator Crack</string>
+    <string name="class_name_pothole">Pothole</string>
+    <string name="class_name_normal">Normal Pavement</string>
+
+    <!-- UI & Toast Messages -->
+    <string name="location_permission_denied_save_without_location">Location permission denied, record saved (without location info)</string>
+    <string name="error_loading_image">Failed to load image</string>
+    <string name="permissions_required">Camera, audio, and location permissions are required to use this feature</string>
+    <string name="location_permission_needed_for_recording">Location permission needed before recording</string>
+    <string name="recording_stopped">Recording stopped</string>
+    <string name="recording_started">Recording started</string>
+    <string name="video_saved_starting_analysis">Video saved successfully, starting background analysis</string>
+    <string name="analyzing_video_in_background">Analyzing video in background</string>
+    <string name="video_analysis_complete">Video analysis complete</string>
+    <string name="video_analysis_summary">Video analysis complete, %1$d issues found</string>
+    <string name="error_processing_video">Failed to process video</string>
+    <string name="error_processing_video_with_message">Failed to process video: %1$s</string>
+    <string name="image_path_processing_failed">Image path processing failed</string>
+    <string name="gps_disabled_save_without_location">GPS is off, record saved (without location info)</string>
+    <string name="location_timeout_save_without_location">Location timeout, record saved (without location info)</string>
+    <string name="error_camera_init_failed">Camera initialization failed</string>
+    <string name="error_camera_start_failed">Camera start failed: %1$s</string>
+    <string name="record_saved">Record saved</string>
+    <string name="error_model_load_failed">Model loading failed</string>
+    <string name="error_camera_not_initialized">Camera not initialized</string>
+    <string name="error_model_not_loaded">Model not loaded</string>
+    <string name="error_processing_failed">Processing failed</string>
+    <string name="error_processing_failed_with_message">Processing failed: %1$s</string>
+    <string name="video_summary">Video Summary</string>
+    <!-- Location Formatting -->
+    <string name="location_format">Longitude: %1$s, Latitude: %2$s</string>
+
+    <!-- Logging Messages (Optional, but good practice) -->
+    <string name="log_new_location_received">New location received: %1$s</string>
+    <string name="log_recording_started">Recording started</string>
+    <string name="log_recording_success">Recording successful, video saved to: %1$s</string>
+    <string name="log_recording_failed">Recording failed: %1$s</string>
+    <string name="log_video_frame_record_saved">Video frame record saved: %1$s</string>
+    <string name="log_video_summary_record_saved">Video summary record saved: %1$s</string>
+    <string name="log_requesting_location_failed">Requesting location failed</string>
+    <string name="log_record_already_exists">Record already exists, with location information, no need to resave.</string>
+    <string name="log_record_saved_or_updated">Record saved/updated: %1$s</string>
+    <string name="log_saving_record_failed">Failed to save record</string>
+    <string name="log_save_bitmap_failed">Failed to save Bitmap to MediaStore: %1$s</string>
+    <string name="log_model_loaded_successfully">PyTorch model loaded successfully</string>
+    <string name="log_error_analyzing_image">Error analyzing image</string>
+
+    <string name="history_title">History</string>
+    <string name="export_dialog_title">Select Export Format</string>
+    <string name="export_option_txt">Export as TXT</string>
+    <string name="export_option_excel">Export as Excel (.xlsx)</string>
+    <string name="export_no_records">No records to export</string>
+    <string name="export_success">File saved to \'Downloads\' folder</string>
+    <string name="export_failed">Export failed</string>
+    <string name="export_error">Error during export: %1$s</string>
+
+    <string name="detail_title">Identification Details</string>
+    <string name="detail_confidence_label">Confidence: %.2f%%</string>
+    <string name="detail_processing_time_label">Processing Time: %d ms</string>
+    <string name="detail_location_label">Location: %s</string>
+    <string name="detail_location_not_recorded">Not recorded</string>
+
+    <string name="export_header_timestamp">Timestamp</string>
+    <string name="export_header_class_name">Classification Type</string>
+    <string name="export_header_confidence">Confidence(%)</string>
+    <string name="export_header_processing_time">Processing Time(ms)</string>
+    <string name="export_header_location">Location</string>
+    <string name="export_data_not_available">N/A</string>
+    <string name="export_excel_sheet_name">History Records</string>
+
+    <string name="export_options_title">Select Export Options</string>
+    <string name="export_all_records">Export All Records</string>
+    <string name="export_by_time_range">Export by Time Range</string>
+
+    <!-- Time Range Picker Dialog -->
+    <string name="time_range_picker_title">Select Time Range</string>
+    <string name="start_time_label">Start Time</string>
+    <string name="end_time_label">End Time</string>
+    <string name="export_button">Export</string>
+    <string name="cancel_button">Cancel</string>
+    <string name="toast_end_time_before_start_time">End time cannot be earlier than start time</string>
+    <string name="toast_no_records_in_range">No records in this time range</string>
+
+    <string name="date_time_button_format">%1$s: %2$s</string>
+    <string name="location_status_title">Location Status</string>
+    <string name="location_status_description">Show current GPS location status</string>
+
+    <string name="error_saving_record">Failed to save record to database</string>
+    <string name="error_model_not_loaded_for_analysis">Model not loaded, unable to perform analysis</string>
+    <string name="error_video_has_no_duration">Video has no duration</string>
+    <string name="error_saving_image">Unable to save image to media store</string>
+
+    <string name="log_record_already_exists_with_location">Record with timestamp %d already exists and contains location info. Skipping resave.</string>
+    <string name="log_record_updated_with_location">Record updated with location info: %s</string>
+    <string name="log_record_exists_without_location_not_updating">Record with timestamp %d already exists without location info. Not updating.</string>
+
+    <string name="history_item_confidence">Confidence: %.2f%%</string>
+    <string name="history_item_processing_time">Processing Time: %d ms</string>
+    <string name="history_item_location">Location: %s</string>
+    <string name="history_item_location_not_available">Location information not available</string>
+    <string name="time_picker_button_format">%1$s: %2$s</string>
+    <string name="empty_history_message">No history records yet</string>
+
+    <string name="menu_clear_history">Clear History</string>
+    <string name="menu_export">Export</string>
+    <string name="detail_fps_label">Inference Speed: %.2f FPS</string>
+    <string name="export_header_fps">Inference Speed (FPS)</string>
+    <string name="history_item_fps">Inference Speed: %.2f FPS</string>
+    <string name="processing_batch_progress">Processing %1$d of %2$d</string>
+
+    <string name="clear_history_dialog_title">Clear History</string>
+    <string name="clear_option_older_than_24h">Clear records older than 24 hours</string>
+    <string name="clear_option_all_records">Clear all records</string>
+    <string name="clear_option_by_date_range">Clear by date range…</string>
+
+    <!-- Clear Confirmation Dialog -->
+    <string name="action_confirmation_title">Action Confirmation</string>
+    <string name="confirm_delete_older_than_24h">Are you sure you want to delete all records older than 24 hours?</string>
+    <string name="confirm_delete_all_records">Are you sure you want to delete all historical records? This action cannot be undone.</string>
+    <string name="confirm_delete_date_range">Are you sure you want to delete all records from %1$s to %2$s?</string> <!-- %1$s: start date, %2$s: end date -->
+    <string name="confirm_delete_button">Confirm Delete</string>
+
+    <!-- Clear Result Toasts -->
+    <string name="delete_date_range_picker_title">Select Date Range to Delete</string>
+    <string name="toast_records_deleted_in_range">Deleted %1$d records within the specified range.</string> <!-- %1$d: count of deleted records -->
+    <string name="toast_all_records_cleared">Cleared all %1$d historical records.</string> <!-- %1$d: count of deleted records -->
+    <string name="toast_old_records_deleted">Deleted %1$d old records.</string> <!-- %1$d: count of deleted records -->
+
+
+    <string name="analyzing_video_progress">Analyzing video %1$d/%2$d</string> <!-- %1$d: current index, %2$d: total count -->
+    <string name="batch_analysis_complete_toast">Batch analysis complete. %1$d items processed.</string> <!-- %1$d: processed count -->
+    <string name="batch_analysis_complete_message">Batch Analysis Complete</string>
+    <string name="batch_processing_failed_error">Batch processing failed: %1$s</string> <!-- %1$s: error message -->
+
+    <string name="log_preheating_location_received">Preheating location received: %1$s</string> <!-- %1$s: formatted location information -->
+    <string name="log_location_preheating_started">Location preheating started.</string>
+    <string name="log_location_preheating_stopped">Location preheating stopped.</string>
+
+    <string name="processing_batch_prefix">Processing</string> <!-- Used to check if resultText is showing batch progress -->
+
+    <string name="toast_video_no_duration">Video has no valid duration, cannot be processed.</string> --> <!-- Enable if Toast is needed -->
+    <string name="log_video_processed">Video processed: %1$s, found %2$d frames with issues</string> <!-- %1$s: video URI, %2$d: processed frames count -->
+    <string name="toast_video_processing_error">Error processing video: %1$s</string> --> <!-- Enable if Toast is needed -->
+
+    <string name="error_failed_to_save_bitmap">Failed to save bitmap.</string>
+    <string name="error_failed_to_create_mediastore_record">Failed to create new MediaStore record.</string>
+    <string name="error_failed_to_load_bitmap_from_uri">Failed to load bitmap from URI.</string>
+
+    <string name="log_model_warmed_up_successfully">Model warmed up successfully.</string>
+    <string name="log_model_load_failed">Failed to load model.</string> <!-- Suggested for the catch block -->
+
+    <string name="log_no_media_selected">No media selected.</string>
+    <string name="log_error_processing_batch_item">Error processing batch item: %1$s</string> <!-- %1$s: URI of the item -->
+    <string name="log_batch_processing_error">Batch processing error</string>
+    <string name="select_model_hint">Select Model</string>
+    <string name="switching_model">Switching model: %1$s</string>
+</resources>
