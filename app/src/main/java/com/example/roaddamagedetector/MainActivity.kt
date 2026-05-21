@@ -82,12 +82,10 @@ class MainActivity : AppCompatActivity() {
     private var activeRecording: Recording? = null
     private var isRecording = false
 
-    // 相机控制相关变量
     private var camera: Camera? = null
     private var cameraControl: CameraControl? = null
     private var cameraInfo: CameraInfo? = null
 
-    // --- 计时器与定位相关变量 ---
     private var timerJob: Job? = null
     private var recordingTimeSeconds = 0
     private lateinit var locationManager: LocationManager
@@ -97,9 +95,8 @@ class MainActivity : AppCompatActivity() {
     private var videoStartLocation: Location? = null
     private var videoEndLocation: Location? = null
 
-    // PyTorch 模型相关变量
     private var pytorchModule: Module? = null
-    private var currentModelName: String = "MCANet-Tiny.ptl" // 默认模型名
+    private var currentModelName: String = "MCANet-Tiny.ptl"
     private val inputSize = 224
 
     private lateinit var classNames: Array<String>
@@ -131,7 +128,6 @@ class MainActivity : AppCompatActivity() {
 
     private var galleryImageUri: Uri? = null
 
-    // 批量媒体选择器
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickMultipleVisualMedia(50)) { uris ->
         if (uris.isNotEmpty()) {
             lifecycleScope.launch {
@@ -170,18 +166,15 @@ class MainActivity : AppCompatActivity() {
         )
         setupClickListeners()
 
-        // 权限检查
         binding.root.post {
             checkAndRequestPermissions()
         }
 
-        // [修改] 初始化模型选择器 (替代之前的 loadPyTorchModel 直接调用)
         setupModelSelector()
 
         locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
     }
 
-    // [新增] 扫描 Assets 文件夹获取所有 .ptl 文件
     private fun getPtlModelsFromAssets(): List<String> {
         return try {
             assets.list("")?.filter { it.endsWith(".ptl") } ?: emptyList()
@@ -191,30 +184,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // [新增] 设置下拉选择器并加载模型
     private fun setupModelSelector() {
         val models = getPtlModelsFromAssets()
 
         if (models.isNotEmpty()) {
-            // 设置默认选中值
             if (!models.contains(currentModelName)) {
                 currentModelName = models[0]
             }
 
-            // 初始加载当前模型
             loadPyTorchModel(currentModelName)
 
-            // 设置 Adapter
             val adapter = ArrayAdapter(
                 this,
                 android.R.layout.simple_dropdown_item_1line,
                 models
             )
 
-            // 绑定到 AutoCompleteTextView
             (binding.modelSelector as? AutoCompleteTextView)?.apply {
                 setAdapter(adapter)
-                setText(currentModelName, false) // false表示不触发过滤
+                setText(currentModelName, false)
 
                 // 监听点击选择事件
                 setOnItemClickListener { _, _, position, _ ->
@@ -223,7 +211,7 @@ class MainActivity : AppCompatActivity() {
                         currentModelName = selectedModel
                         Log.d(TAG, "User selected model: $currentModelName")
                         Toast.makeText(context, getString(R.string.switching_model, currentModelName), Toast.LENGTH_SHORT).show()
-                        loadPyTorchModel(currentModelName) // 重新加载新模型
+                        loadPyTorchModel(currentModelName)
                     }
                 }
             }
@@ -996,10 +984,8 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "RoadDamageDetector"
-        // MODEL_NAME 已经移除
     }
 
-    // [修改] 接受文件名参数的模型加载方法
     private fun loadPyTorchModel(modelName: String) {
         runOnUiThread { showLoading(true) }
 
@@ -1018,7 +1004,6 @@ class MainActivity : AppCompatActivity() {
 
                 withContext(Dispatchers.Main) {
                     showLoading(false)
-                    // 仅提示加载成功，不频繁打断用户
                 }
             } catch (e: Exception) {
                 Log.e(TAG, getString(R.string.log_model_load_failed) + ": " + modelName, e)
@@ -1030,11 +1015,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // [修改] 接受文件名参数的路径获取方法
     @Throws(IOException::class)
     private fun assetFilePath(modelName: String): String {
         val file = File(cacheDir, modelName)
-        // 检查文件是否存在且大小不为0，否则覆盖
         if (!file.exists() || file.length() == 0L) {
             assets.open(modelName).use { inputStream ->
                 file.outputStream().use { outputStream ->

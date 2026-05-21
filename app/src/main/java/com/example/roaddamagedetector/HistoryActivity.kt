@@ -108,11 +108,9 @@ class HistoryActivity : AppCompatActivity() {
         val btnStartTime = dialogView.findViewById<Button>(R.id.btnStartTime)
         val btnEndTime = dialogView.findViewById<Button>(R.id.btnEndTime)
 
-        // 初始化按钮文本
         updateDateTimeButton(btnStartTime, startCalendar, getString(R.string.start_time_label))
         updateDateTimeButton(btnEndTime, endCalendar, getString(R.string.end_time_label))
 
-        // 设置点击事件
         btnStartTime.setOnClickListener {
             pickDateTime(startCalendar) {
                 updateDateTimeButton(btnStartTime, startCalendar, getString(R.string.start_time_label))
@@ -239,19 +237,19 @@ class HistoryActivity : AppCompatActivity() {
             .setTitle(getString(R.string.clear_history_dialog_title))
             .setItems(options) { dialog, which ->
                 when (which) {
-                    0 -> { // 清理24小时前的记录
+                    0 -> {
                         val calendar = Calendar.getInstance()
                         calendar.add(Calendar.DAY_OF_YEAR, -1)
                         showConfirmationDialog(message = getString(R.string.confirm_delete_older_than_24h)) {
                             clearRecordsOlderThan(calendar.timeInMillis)
                         }
                     }
-                    1 -> { // 清理所有记录
+                    1 -> {
                         showConfirmationDialog(message = getString(R.string.confirm_delete_all_records)) {
                             clearAllHistory()
                         }
                     }
-                    2 -> { // 按日期范围清理
+                    2 -> {
                         showDeleteDateRangePicker()
                     }
                 }
@@ -270,7 +268,6 @@ class HistoryActivity : AppCompatActivity() {
 
         dateRangePicker.addOnPositiveButtonClickListener { selection ->
             val startDate = selection.first
-            // 将结束时间戳设置为所选日期的最后一毫秒，以确保包含当天
             val endDate = selection.second + TimeUnit.DAYS.toMillis(1) - 1
 
             val sdf = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())

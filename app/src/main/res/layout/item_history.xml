@@ -64,7 +64,6 @@
             app:layout_constraintBottom_toTopOf="@id/itemFps"
             tools:text="分类时长: 120 ms" />
 
-        <!-- 新增：推理速度 (FPS) -->
         <TextView
             android:id="@+id/itemFps"
             android:layout_width="0dp"
@@ -95,7 +94,6 @@
             app:layout_constraintVertical_bias="0"
             tools:text="2025-11-29 10:30" />
 
-        <!-- 确保当 itemFps 隐藏时，下面的视图能正确连接 -->
         <androidx.constraintlayout.widget.Group
             android:id="@+id/itemFpsGroup"
             android:layout_width="wrap_content"

@@ -2,14 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- 清理历史记录的菜单项 -->
     <item
         android:id="@+id/action_clear_history"
         android:icon="@drawable/ic_delete"
         android:title="@string/menu_clear_history"
         app:showAsAction="ifRoom" />
 
-    <!-- 原有的导出菜单项 -->
     <item
         android:id="@+id/action_export"
         android:icon="@drawable/ic_export"

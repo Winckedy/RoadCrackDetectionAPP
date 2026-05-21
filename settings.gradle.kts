@@ -12,7 +12,7 @@ pluginManagement {
 
     }
 }
-@Suppress("UnstableApiUsage") // <-- 添加这一行
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {

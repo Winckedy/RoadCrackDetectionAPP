@@ -20,7 +20,6 @@ object DataExporter {
     private const val TAG = "DataExporter"
 
     suspend fun exportToTxt(context: Context, records: List<HistoryRecord>): Uri? {
-        // 修改：将 context 传递给 buildTxtContent
         val content = buildTxtContent(context, records)
         val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
         val fileName = "HistoryData_$timestamp.txt"
@@ -28,7 +27,6 @@ object DataExporter {
     }
 
     suspend fun exportToExcel(context: Context, records: List<HistoryRecord>): Uri? {
-        // 修改：将 context 传递给 buildExcelWorkbook
         val workbook = buildExcelWorkbook(context, records)
         val timestamp = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(Date())
         val fileName = "HistoryData_$timestamp.xlsx"
@@ -64,7 +62,6 @@ object DataExporter {
         ).joinToString("\t")
         builder.append(header).append("\n")
 
-        // 添加数据行
         records.forEach { record ->
             val timestamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date(record.timestamp))
             val confidence = String.format(Locale.US, "%.2f", record.confidence * 100)
@@ -78,12 +75,9 @@ object DataExporter {
 
     private fun buildExcelWorkbook(context: Context, records: List<HistoryRecord>): Workbook {
         val workbook = XSSFWorkbook()
-        // 修改：使用 string 资源设置工作表名称
         val sheet = workbook.createSheet(context.getString(R.string.export_excel_sheet_name))
 
-        // 创建表头
         val headerRow = sheet.createRow(0)
-        // 修改：使用 string 资源获取表头列表
         val headers = listOf(
             context.getString(R.string.export_header_timestamp),
             context.getString(R.string.export_header_class_name),
@@ -96,7 +90,6 @@ object DataExporter {
             headerRow.createCell(index).setCellValue(header)
         }
 
-        // 填充数据
         records.forEachIndexed { index, record ->
             val dataRow = sheet.createRow(index + 1)
             val timestamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault()).format(Date(record.timestamp))
@@ -117,11 +110,7 @@ object DataExporter {
         return workbook
     }
 
-    /**
-     * 使用 MediaStore API 保存文件到公共的 "Downloads" 目录
-     */
     private suspend fun saveFile(context: Context, fileName: String, mimeType: String, content: ByteArray): Uri? {
-        // ... (此方法内部逻辑不变)
         return withContext(Dispatchers.IO) {
             val collection = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
                 MediaStore.Downloads.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY)

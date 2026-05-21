@@ -28,15 +28,12 @@ interface HistoryRecordDao {
     @Query("SELECT * FROM history_records WHERE timestamp = :timestamp LIMIT 1")
     suspend fun getRecordByTimestamp(timestamp: Long): HistoryRecord?
 
-    // 👇 修改点 1: 添加 : Int
     @Query("DELETE FROM history_records")
     suspend fun clearAll(): Int
 
-    // 👇 修改点 2: 添加 : Int
     @Query("DELETE FROM history_records WHERE timestamp < :timestamp")
     suspend fun clearOlderThan(timestamp: Long): Int
 
-    // 👇 修改点 3: 添加 : Int
     @Query("DELETE FROM history_records WHERE timestamp BETWEEN :startTime AND :endTime")
     suspend fun clearInRange(startTime: Long, endTime: Long): Int
 }

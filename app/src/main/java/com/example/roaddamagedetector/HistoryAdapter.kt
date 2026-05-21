@@ -15,7 +15,6 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-// 2. 在构造函数中接收 Context
 class HistoryAdapter(private val context: Context, private var records: List<HistoryRecord>) :
     RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder>() {
 

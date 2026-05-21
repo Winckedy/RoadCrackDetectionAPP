@@ -22,14 +22,12 @@
     <string name="timer_initial_value">00:00</string>
     <string name="detail_image_description">识别结果的图片</string>
 
-    <!-- Class Names for Damage Types -->
     <string name="class_name_transverse_crack">横向裂缝</string>
     <string name="class_name_longitudinal_crack">竖向裂缝</string>
     <string name="class_name_alligator_crack">网状裂缝</string>
     <string name="class_name_pothole">坑洞路面</string>
     <string name="class_name_normal">正常路面</string>
 
-    <!-- UI & Toast Messages -->
     <string name="location_permission_denied_save_without_location">未授予位置权限，记录已保存（无位置信息）</string>
     <string name="error_loading_image">无法加载图片</string>
     <string name="permissions_required">必须授予相机、录音和定位权限才能使用此功能</string>
@@ -54,10 +52,9 @@
     <string name="error_processing_failed">处理失败</string>
     <string name="error_processing_failed_with_message">处理失败: %1$s</string>
     <string name="video_summary">视频摘要</string>
-    <!-- Location Formatting -->
+
     <string name="location_format">经度: %1$s, 纬度: %2$s</string>
 
-    <!-- Logging Messages (Optional, but good practice) -->
     <string name="log_new_location_received">获取到新位置: %1$s</string>
     <string name="log_recording_started">录制开始</string>
     <string name="log_recording_success">录制成功，视频保存在: %1$s</string>
@@ -145,41 +142,41 @@
     <string name="action_confirmation_title">操作确认</string>
     <string name="confirm_delete_older_than_24h">确定要删除24小时之前的所有记录吗？</string>
     <string name="confirm_delete_all_records">确定要删除全部历史记录吗？此操作不可撤销。</string>
-    <string name="confirm_delete_date_range">确定要删除从 %1$s 到 %2$s 的所有记录吗？</string> <!-- %1$s: start date, %2$s: end date -->
+    <string name="confirm_delete_date_range">确定要删除从 %1$s 到 %2$s 的所有记录吗？</string>
     <string name="confirm_delete_button">确认删除</string>
 
     <!-- 清理结果提示 -->
     <string name="delete_date_range_picker_title">选择要删除的日期范围</string>
-    <string name="toast_records_deleted_in_range">已删除 %1$d 条指定范围内的记录。</string> <!-- %1$d: count of deleted records -->
-    <string name="toast_all_records_cleared">已清空 %1$d 条所有历史记录。</string> <!-- %1$d: count of deleted records -->
-    <string name="toast_old_records_deleted">已删除 %1$d 条旧记录。</string> <!-- %1$d: count of deleted records -->
+    <string name="toast_records_deleted_in_range">已删除 %1$d 条指定范围内的记录。</string>
+    <string name="toast_all_records_cleared">已清空 %1$d 条所有历史记录。</string>
+    <string name="toast_old_records_deleted">已删除 %1$d 条旧记录。</string>
 
 
-    <string name="analyzing_video_progress">正在分析视频 %1$d/%2$d</string> <!-- %1$d: current index, %2$d: total count -->
-    <string name="batch_analysis_complete_toast">批量分析完成。已处理 %1$d 个项目。</string> <!-- %1$d: processed count -->
+    <string name="analyzing_video_progress">正在分析视频 %1$d/%2$d</string>
+    <string name="batch_analysis_complete_toast">批量分析完成。已处理 %1$d 个项目。</string>
     <string name="batch_analysis_complete_message">批量分析完成</string>
-    <string name="batch_processing_failed_error">批量处理失败: %1$s</string> <!-- %1$s: error message -->
+    <string name="batch_processing_failed_error">批量处理失败: %1$s</string>
 
-    <string name="log_preheating_location_received">预热定位已接收: %1$s</string> <!-- %1$s: 格式化后的位置信息 -->
+    <string name="log_preheating_location_received">预热定位已接收: %1$s</string>
     <string name="log_location_preheating_started">定位预热已开始。</string>
     <string name="log_location_preheating_stopped">定位预热已停止。</string>
 
-    <string name="processing_batch_prefix">正在处理</string> <!-- 用于检查resultText是否显示批量处理进度 -->
+    <string name="processing_batch_prefix">正在处理</string>
 
 
-    <string name="toast_video_no_duration">视频无有效时长，无法处理。</string> <!-- 如果需要Toast提示可以启用 -->
-    <string name="log_video_processed">视频已处理: %1$s, 发现 %2$d 个异常帧</string> <!-- %1$s: video URI, %2$d: processed frames count -->
-    <string name="toast_video_processing_error">处理视频时发生错误: %1$s</string><!-- 如果需要Toast提示可以启用 -->
+    <string name="toast_video_no_duration">视频无有效时长，无法处理。</string>
+    <string name="log_video_processed">视频已处理: %1$s, 发现 %2$d 个异常帧</string>
+    <string name="toast_video_processing_error">处理视频时发生错误: %1$s</string>
 
     <string name="error_failed_to_save_bitmap">保存位图失败。</string>
     <string name="error_failed_to_create_mediastore_record">创建新的MediaStore记录失败。</string>
     <string name="error_failed_to_load_bitmap_from_uri">从URI加载位图失败。</string>
 
     <string name="log_model_warmed_up_successfully">模型预热成功。</string>
-    <string name="log_model_load_failed">模型加载失败。</string> <!-- 建议添加此项以捕获catch块中的错误 -->
+    <string name="log_model_load_failed">模型加载失败。</string>
     <string name="log_no_media_selected">未选择任何媒体文件。</string>
 
-    <string name="log_error_processing_batch_item">处理批次项目时出错: %1$s</string> <!-- %1$s: URI of the item -->
+    <string name="log_error_processing_batch_item">处理批次项目时出错: %1$s</string>
     <string name="log_batch_processing_error">批量处理错误</string>
     <string name="select_model_hint">选择模型</string>
     <string name="switching_model">正在切换模型: %1$s</string>
