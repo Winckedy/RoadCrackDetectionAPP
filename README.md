@@ -202,7 +202,7 @@ RoadCrackDetectionAPP/
 | **Android Studio** | Ladybug (2024.2.1) or later          |
 | **Gradle**         | 8.2+ (Kotlin DSL)                    |
 | **Kotlin**         | 1.9.0+                               |
-| **Android SDK**    | API Level 28 (Android 9.0) or higher |
+| **Android SDK**    | API Level 26 (Android 8.0) or higher |
 | **JDK**            | 17                                   |
 
 ### Build Dependencies (actual versions from the project)
