@@ -445,5 +445,5 @@ If you find this project helpful, please consider giving it a ⭐ on GitHub!
 
 <p style="text-align: center;">
   Made with ❤️ by the RoadCrackDetectionAPP Team<br>
-  © 2025-2026 | MIT License
+  © 2025-2026 | GPL-3.0 LICENSE
 </p>
