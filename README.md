@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/Android-9%2B-brightgreen" alt="Android">
   <img src="https://img.shields.io/badge/Kotlin-1.9%2B-blue" alt="Kotlin">
   <img src="https://img.shields.io/badge/PyTorch-Mobile-red" alt="PyTorch">
-  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License">
+  <img src="https://img.shields.io/badge/License-GPL-yellow" alt="License">
 </div>
 
 ---
