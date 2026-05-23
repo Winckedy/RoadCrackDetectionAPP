@@ -3,7 +3,7 @@
 > A real-time pavement crack detection Android application powered by PyTorch Mobile.
 
 <div style="text-align: center;">
-  <img src="https://img.shields.io/badge/Android-9%2B-brightgreen" alt="Android">
+  <img src="https://img.shields.io/badge/Android-8%2B-brightgreen" alt="Android">
   <img src="https://img.shields.io/badge/Kotlin-1.9%2B-blue" alt="Kotlin">
   <img src="https://img.shields.io/badge/PyTorch-Mobile-red" alt="PyTorch">
   <img src="https://img.shields.io/badge/License-GPL-yellow" alt="License">
